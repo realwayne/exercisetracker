@@ -45,7 +45,7 @@ app.post('/api/users/:_id/exercises', (req, res) => {
   const user = users.find((user) => user._id === userId);
   if (user) {
     res.json({
-      user,
+      ...user,
       ...newExercise
       // username: user.username,
       // exercise : newExercise,
