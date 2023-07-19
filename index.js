@@ -46,12 +46,12 @@ app.post('/api/users/:_id/exercises', (req, res) => {
   if (user) {
     res.json({
       ...user,
-      ...newExercise
+      // ...newExercise
       // username: user.username,
       // exercise : newExercise,
-      // description: newExercise.description,
-      // duration: newExercise.duration,
-      // date: newExercise.date.toDateString(),
+      description: newExercise.description,
+      duration: +newExercise.duration,
+      date: newExercise.date.toDateString(),
       // ...newExercise,
       // _id: user._id,
     });
