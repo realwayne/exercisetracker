@@ -45,13 +45,15 @@ app.post('/api/users/:_id/exercises', (req, res) => {
   const user = users.find((user) => user._id === userId);
   if (user) {
     res.json({
-      username: user.username,
-      exercise : newExercise,
+      user,
+      ...newExercise
+      // username: user.username,
+      // exercise : newExercise,
       // description: newExercise.description,
       // duration: newExercise.duration,
       // date: newExercise.date.toDateString(),
       // ...newExercise,
-      _id: user._id,
+      // _id: user._id,
     });
   } else {
     res.sendStatus(404);
